@@ -4,7 +4,12 @@ import numpy as np
 
 st.write("Welcome to your expedition to the Himalayas! Tell us a bit about yourself and we'll recommend the perfect mountain for you to climb according to your profile.")
 
-age = int(st.text_input("How old are you?"))
+age = st.text_input("How old are you?")
+try:
+    age = int(age)
+except:
+    st.error("Please make sure that you only enter a number")
+    st.stop()
 nb_members = int(st.text_input("How many people will join the expedition?"))
 nb_hired = int(st.text_input("How many of those are hired staff?"))
 pct_hired= int(nb_hired)/int(nb_members)
