@@ -40,9 +40,9 @@ st.markdown("<h3 style='color: white;'>Tell us a bit about yourself and we'll re
 ## Change color to text input 
 st.markdown("""
     <style>
-    /* Target text input inside Streamlit */
-    .stTextInput input {
-        color: white;
+    label {
+        color: white !important;
+        font-weight: bold;
     }
     </style>
 """, unsafe_allow_html=True)
