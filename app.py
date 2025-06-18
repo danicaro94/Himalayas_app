@@ -28,7 +28,7 @@ def background_image_style(path):
 st.markdown(background_image_style("climbing everest.jpg"), unsafe_allow_html=True)
 # Add text as title with specific features
 st.markdown("""
-    <h2 style='text-align: center; color: #2E8B57; font-family: Georgia;'>
+    <h2 style='text-align: center; color: #FFFFFF; font-family: Georgia;'>
         Welcome to your expedition to the Himalayas! 🏔️
     </h2>
 """, unsafe_allow_html=True)
