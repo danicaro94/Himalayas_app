@@ -1,10 +1,34 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+### Getting a background
+import base64
+
+# Function to load and encode image
+def load_image(path):
+    with open(path, "rb") as img:
+        return base64.b64encode(img.read()).decode()
+
+# Function to apply image as background
+def background_image_style(path):
+    encoded = load_image(path)
+    return f"""
+    <style>
+    .stApp {{
+        background-image: url("data:image/png;base64,{encoded}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }}
+    </style>
+    """
+
+# Apply background image
+st.markdown(background_image_style("climbing everest.jpg"), unsafe_allow_html=True)
 
 st.write("Welcome to your expedition to the Himalayas! 🏔️") 
 st.write("Tell us a bit about yourself and we'll recommend the perfect mountain for you to climb according to your profile.")
-st.image('climbing everest.jpg', caption="This could be you", use_container_width=True)
+#st.image('climbing everest.jpg', caption="This could be you", use_container_width=True)
 age = st.text_input("How old are you?")
 try:
     age = int(age)
