@@ -11,8 +11,19 @@ try:
 except:
     #st.error("Please make sure that you only enter a number")
     st.stop()
-nb_members = int(st.text_input("How many people will join the expedition?"))
-nb_hired = int(st.text_input("How many of those are hired staff?"))
+
+nb_members = st.text_input("How many people will join the expedition?")
+try:
+    nb_members = int(nb_members)
+except:
+    st.stop()
+
+nb_hired = st.text_input("How many of those are hired staff?")
+try:
+    nb_hired = int(nb_hired)
+except:
+    st.stop()
+
 pct_hired= int(nb_hired)/int(nb_members)
 
 season_list = ["Spring", "Summer", "Autumn", "Winter"]
