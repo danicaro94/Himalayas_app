@@ -247,6 +247,30 @@ new_data = pd.DataFrame({
 
 # Here we need to run model 1 to get max_height
 
+
+## Change colors of the metric cards
+st.markdown("""
+    <style>
+    /* Make metric labels and values white */
+    div[data-testid="metric-container"] {
+        color: white;
+    }
+
+    /* Positive delta: make arrow and text green */
+    div[data-testid="metric-container"] svg {
+        fill: green;
+    }
+    div[data-testid="metric-container"] .stMetricDeltaPositive {
+        color: green;
+    }
+
+    /* Negative delta: make arrow and text red */
+    div[data-testid="metric-container"] .stMetricDeltaNegative {
+        color: red;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 st.write(f"According to our analysis you will be able to climb up to:")
 [col1] = st.columns(1)
 col1.metric("Prediction", f"output_model_1", "meters")
