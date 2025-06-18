@@ -163,4 +163,4 @@ def get_highest_peak(country):
     if not peak.empty:
         return peak.values[0]
 
-print(get_highest_peak(country))
+st.write(get_highest_peak(country))
