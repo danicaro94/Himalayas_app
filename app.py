@@ -277,13 +277,13 @@ if st.button("🚀 Confirm and Continue"):
     
     st.write(f"According to our analysis you will be able to climb up to:")
     [col1] = st.columns(1)
-    col1.metric("Prediction", f"output_model_1", "meters")
+    col1.metric("Prediction", f"output_model_1", "meters", delta_color="normal")
     st.write(f"According to our analysis you can climb: ")
     
     col1, col2, col3 = st.columns(3)
-    col1.metric("death_1", "Peak1", country_max_height)
-    col2.metric("death_2", "Peak2",country_max_height)
-    col3.metric("death_3", "Peak3", country_max_height)
+    col1.metric("death_1", "Peak1", country_max_height, delta_color="normal")
+    col2.metric("death_2", "Peak2",country_max_height, delta_color="normal")
+    col3.metric("death_3", "Peak3", country_max_height, delta_color="normal")
     
     #  Definition of new data for model 2
     
