@@ -36,6 +36,17 @@ st.markdown("""
 st.markdown("<h3 style='color: white;'>Tell us a bit about yourself and we'll recommend the perfect mountain for you to climb according to your profile.</h3>", unsafe_allow_html=True)
 
 #st.image('climbing everest.jpg', caption="This could be you", use_container_width=True)
+
+## Change color to text input 
+st.markdown("""
+    <style>
+    /* Target text input inside Streamlit */
+    .stTextInput input {
+        color: white;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 age = st.text_input("How old are you?")
 try:
     age = int(age)
