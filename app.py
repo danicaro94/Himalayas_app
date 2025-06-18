@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-st.write("Welcome to your expedition to the Himalayas! Tell us a bit about yourself and we'll recommend the perfect mountain for you to climb according to your profile.")
+st.write("Welcome to your expedition to the Himalayas! 🏔️ \n 
+Tell us a bit about yourself and we'll recommend the perfect mountain for you to climb according to your profile.")
 st.image('climbing everest.jpg', caption="This could be you", use_container_width=True)
 age = st.text_input("How old are you?")
 try:
