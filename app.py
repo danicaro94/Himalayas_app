@@ -284,7 +284,51 @@ if st.button("🚀 Confirm and Continue"):
     col1.metric("death_1", "Peak1", country_max_height, delta_color="normal")
     col2.metric("death_2", "Peak2",country_max_height, delta_color="normal")
     col3.metric("death_3", "Peak3", country_max_height, delta_color="normal")
+
+
+
+        label_1 = "Risk Level"
+    main_1 = "High"
+    note_1 = "Caution advised"
     
+    label_2 = "Prediction"
+    main_2 = "Everest"
+    note_2 = "8,848 m"
+    
+    label_3 = "Weather"
+    main_3 = "Cold"
+    note_3 = "−30°C"
+    
+    # Display in columns
+    col1, col2, col3 = st.columns(3)
+    
+    # First column
+    col1.markdown(f"""
+        <div style='text-align: center; line-height: 1.2;'>
+            <div style='color: red;'>{label_1}</div>
+            <div style='color: white; font-size: 28px; font-weight: bold;'>{main_1}</div>
+            <div style='color: green;'>{note_1}</div>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    # Second column
+    col2.markdown(f"""
+        <div style='text-align: center; line-height: 1.2;'>
+            <div style='color: red;'>{label_2}</div>
+            <div style='color: white; font-size: 28px; font-weight: bold;'>{main_2}</div>
+            <div style='color: green;'>{note_2}</div>
+        </div>
+    """, unsafe_allow_html=True)
+    
+    # Third column
+    col3.markdown(f"""
+        <div style='text-align: center; line-height: 1.2;'>
+            <div style='color: red;'>{label_3}</div>
+            <div style='color: white; font-size: 28px; font-weight: bold;'>{main_3}</div>
+            <div style='color: green;'>{note_3}</div>
+        </div>
+    """, unsafe_allow_html=True)
+        
     #  Definition of new data for model 2
     
     new_data2 = pd.DataFrame({
