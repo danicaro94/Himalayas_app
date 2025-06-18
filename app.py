@@ -195,7 +195,7 @@ new_data = pd.DataFrame({
 
 # Here we need to run model 1 to get max_height
 
-st.write(f"According to our analysis you will be able to climb up to {output_model_1} meters!")
+st.write(f"According to our analysis you will be able to climb up to {"output_model_1"} meters!")
 
 #  Definition of new data for model 2
 
