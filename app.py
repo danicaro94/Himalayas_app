@@ -33,8 +33,8 @@ st.markdown("""
     </h2>
 """, unsafe_allow_html=True)
 
-st.write("Welcome to your expedition to the Himalayas! 🏔️") 
-st.write("Tell us a bit about yourself and we'll recommend the perfect mountain for you to climb according to your profile.")
+st.markdown("<h3 style='color: white;'>Tell us a bit about yourself and we'll recommend the perfect mountain for you to climb according to your profile.</h3>", unsafe_allow_html=True)
+
 #st.image('climbing everest.jpg', caption="This could be you", use_container_width=True)
 age = st.text_input("How old are you?")
 try:
