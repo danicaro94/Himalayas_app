@@ -15,7 +15,8 @@ def background_image_style(path):
     return f"""
     <style>
     .stApp {{
-        background-image: url("data:image/png;base64,{encoded}");
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                          url("data:image/png;base64,{encoded}");
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
