@@ -275,8 +275,8 @@ if st.button("🚀 Confirm and Continue"):
         <div style='text-align: center; line-height: 1.2;'>
             <div style='color: red;'>{label_1}</div>
             <div style='color: white; font-size: 28px; font-weight: bold;'>{main_1}</div>
-            <div style='color: green;'>{note_1}</div>
             <div style='color: white;'>{note_1_1}meters</div>
+            <div style='color: green; font-size: 22px;'>{note_1}</div>
         </div>
     """, unsafe_allow_html=True)
     
@@ -285,8 +285,8 @@ if st.button("🚀 Confirm and Continue"):
         <div style='text-align: center; line-height: 1.2;'>
             <div style='color: red;'>{label_2}</div>
             <div style='color: white; font-size: 28px; font-weight: bold;'>{main_2}</div>
-            <div style='color: green;'>{note_2}</div>
             <div style='color: white;'>{note_2_1}meters</div>
+            <div style='color: green; font-size: 22px;'>{note_2}</div>
         </div>
     """, unsafe_allow_html=True)
     
@@ -295,8 +295,8 @@ if st.button("🚀 Confirm and Continue"):
         <div style='text-align: center; line-height: 1.2;'>
             <div style='color: red;'>{label_3}</div>
             <div style='color: white; font-size: 28px; font-weight: bold;'>{main_3}</div>
-            <div style='color: green;'>{note_3}</div>
             <div style='color: white;'>{note_3_1}meters</div>
+            <div style='color: green; font-size: 22px;'>{note_3}</div>
         </div>
     """, unsafe_allow_html=True)
     
