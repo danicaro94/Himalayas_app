@@ -232,68 +232,72 @@ def get_highest_peak(country):
     if not peak.empty:
         return peak.values[0]
 country_max_height = get_highest_peak(country)
-
-# Definition of new data for model 1 
-
-new_data = pd.DataFrame({
-    'mseason': [season],
-    'sex': [sex],
-    'country_max_height': [country_max_height],
-    'mo2used': [o2used],
-    'nb_members': [nb_members],
-    'pct_hired': [pct_hired],
-    'age': [age],
-})
-
-# Here we need to run model 1 to get max_height
+if st.button("🚀 Confirm and Continue"):
+    # Only run this after the button is clicked
+    st.success("Thanks! Processing your inputs...")
 
 
-## Change colors of the metric cards
-st.markdown("""
-    <style>
-    /* Make metric labels and values white */
-    div[data-testid="metric-container"] {
-        color: white;
-    }
-
-    /* Positive delta: make arrow and text green */
-    div[data-testid="metric-container"] svg {
-        fill: green;
-    }
-    div[data-testid="metric-container"] .stMetricDeltaPositive {
-        color: green;
-    }
-
-    /* Negative delta: make arrow and text red */
-    div[data-testid="metric-container"] .stMetricDeltaNegative {
-        color: red;
-    }
-    </style>
-""", unsafe_allow_html=True)
-
-st.write(f"According to our analysis you will be able to climb up to:")
-[col1] = st.columns(1)
-col1.metric("Prediction", f"output_model_1", "meters")
-st.write(f"According to our analysis you can climb: ")
-
-col1, col2, col3 = st.columns(3)
-col1.metric("death_1", "Peak1", "Success_pro1")
-col2.metric("death_2", "Peak2", "Success_pro2")
-col3.metric("death_3", "Peak3", "Success_pro3")
-
-#  Definition of new data for model 2
-
-new_data2 = pd.DataFrame({
-    'mseason': [season],
-    'sex': [sex],
-    'country_max_height': [country_max_height],
-    'mo2used': [o2used],
-    'nb_members': [nb_members],
-    'pct_hired': [pct_hired],
-    'age': [age],
-    'peakid': ['EVER']
-})
-
-
-
-#st.write(country_max_height)
+    # Definition of new data for model 1 
+    
+    new_data = pd.DataFrame({
+        'mseason': [season],
+        'sex': [sex],
+        'country_max_height': [country_max_height],
+        'mo2used': [o2used],
+        'nb_members': [nb_members],
+        'pct_hired': [pct_hired],
+        'age': [age],
+    })
+    
+    # Here we need to run model 1 to get max_height
+    
+    
+    ## Change colors of the metric cards
+    st.markdown("""
+        <style>
+        /* Make metric labels and values white */
+        div[data-testid="metric-container"] {
+            color: white;
+        }
+    
+        /* Positive delta: make arrow and text green */
+        div[data-testid="metric-container"] svg {
+            fill: green;
+        }
+        div[data-testid="metric-container"] .stMetricDeltaPositive {
+            color: green;
+        }
+    
+        /* Negative delta: make arrow and text red */
+        div[data-testid="metric-container"] .stMetricDeltaNegative {
+            color: red;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+    
+    st.write(f"According to our analysis you will be able to climb up to:")
+    [col1] = st.columns(1)
+    col1.metric("Prediction", f"output_model_1", "meters")
+    st.write(f"According to our analysis you can climb: ")
+    
+    col1, col2, col3 = st.columns(3)
+    col1.metric("death_1", "Peak1", "Success_pro1")
+    col2.metric("death_2", "Peak2", "Success_pro2")
+    col3.metric("death_3", "Peak3", "Success_pro3")
+    
+    #  Definition of new data for model 2
+    
+    new_data2 = pd.DataFrame({
+        'mseason': [season],
+        'sex': [sex],
+        'country_max_height': [country_max_height],
+        'mo2used': [o2used],
+        'nb_members': [nb_members],
+        'pct_hired': [pct_hired],
+        'age': [age],
+        'peakid': ['EVER']
+    })
+    
+    
+    
+    #st.write(country_max_height)
