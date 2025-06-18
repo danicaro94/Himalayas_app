@@ -252,17 +252,20 @@ if st.button("🚀 Confirm and Continue"):
     # Here we need to run model 1 to get max_height
     
     
-    label_1 = "Risk Level"
-    main_1 = "High"
-    note_1 = "Caution advised"
+    label_1 = "death_peak_1"
+    main_1 = "name_peak_1"
+    note_1 = "success_peak_1"
+    note_1_1 = "height_peak_1"
     
-    label_2 = "Prediction"
-    main_2 = "Everest"
-    note_2 = "8,848 m"
+    label_2 = "death_peak_2"
+    main_2 = "name_peak_2"
+    note_2 = "success_peak_2"
+    note_2_1 = "height_peak_2"
     
-    label_3 = "Weather"
-    main_3 = "Cold"
-    note_3 = "−30°C"
+    label_3 = "death_peak_3"
+    main_3 = "name_peak_3"
+    note_3 = "success_peak_3"
+    note_3_1 = "height_peak_3"
     
     # Display in columns
     col1, col2, col3 = st.columns(3)
@@ -273,6 +276,7 @@ if st.button("🚀 Confirm and Continue"):
             <div style='color: red;'>{label_1}</div>
             <div style='color: white; font-size: 28px; font-weight: bold;'>{main_1}</div>
             <div style='color: green;'>{note_1}</div>
+            <div style='color: white;'>{note_1_1}meters</div>
         </div>
     """, unsafe_allow_html=True)
     
@@ -282,6 +286,7 @@ if st.button("🚀 Confirm and Continue"):
             <div style='color: red;'>{label_2}</div>
             <div style='color: white; font-size: 28px; font-weight: bold;'>{main_2}</div>
             <div style='color: green;'>{note_2}</div>
+            <div style='color: white;'>{note_2_1}meters</div>
         </div>
     """, unsafe_allow_html=True)
     
@@ -291,6 +296,7 @@ if st.button("🚀 Confirm and Continue"):
             <div style='color: red;'>{label_3}</div>
             <div style='color: white; font-size: 28px; font-weight: bold;'>{main_3}</div>
             <div style='color: green;'>{note_3}</div>
+            <div style='color: white;'>{note_3_1}meters</div>
         </div>
     """, unsafe_allow_html=True)
     
