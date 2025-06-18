@@ -29,7 +29,8 @@ with st.container(border=True):
     difficulty = st.selectbox ("Difficulty level", difficulty_list)
 # Here we need to define the categories with the ranges defined by Diogo
 
-Country = ['Afghanistan',
+Country = ['Other',
+ 'Afghanistan',
  'Albania',
  'Algeria',
  'Andorra',
@@ -109,7 +110,6 @@ Country = ['Afghanistan',
  'New Zealand',
  'Norway',
  'Oman',
- 'Other',
  'Pakistan',
  'Palestine',
  'Panama',
