@@ -153,6 +153,7 @@ Country = ['Other',
 with st.container(border=True):
     country = st.selectbox("Country", Country)
 # Function to get country_max_height  
+df= pd.read_csv('Country_max_heigth_list.csv')
 def get_highest_peak(country):
     country = country.lower()
     if country in df['Country'].str.lower().values:
@@ -162,4 +163,4 @@ def get_highest_peak(country):
     if not peak.empty:
         return peak.values[0]
 
-get_highest_peak(country)    
+print(get_highest_peak(country))
