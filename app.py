@@ -250,11 +250,16 @@ new_data = pd.DataFrame({
 st.write(f"According to our analysis you will be able to climb up to:")
 [col1] = st.columns(1)
 col1.metric("Prediction", f"output_model_1", "meters")
+st.write(f"According to our analysis you can climb: ")
 
+col1, col2, col3 = st.columns(3)
+col1.metric("death_1", "Peak1", "Success_pro1")
+col2.metric("death_2", "Peak2", "Success_pro2")
+col3.metric("death_3", "Peak3", "Success_pro3")
 
 #  Definition of new data for model 2
 
-new_data = pd.DataFrame({
+new_data2 = pd.DataFrame({
     'mseason': [season],
     'sex': [sex],
     'country_max_height': [country_max_height],
@@ -264,11 +269,7 @@ new_data = pd.DataFrame({
     'age': [age],
     'peakid': ['EVER']
 })
-st.write(f"According to our analysis you can climb: ")
-col1, col2, col3 = st.columns(3)
-col1.metric("death_1", "Peak1", "Success_pro1")
-col2.metric("death_2", "Peak2", "Success_pro2")
-col3.metric("death_3", "Peak3", "Success_pro3")
+
 
 
 #st.write(country_max_height)
