@@ -3,8 +3,7 @@ import pandas as pd
 import numpy as np
 
 st.write("Welcome to your expedition to the Himalayas! Tell us a bit about yourself and we'll recommend the perfect mountain for you to climb according to your profile.")
-st.image('climbing everest.jpg', caption="Online image", use_column_width=True)
-st.image("https://upload.wikimedia.org/wikipedia/commons/e/e6/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg")
+st.image('climbing everest.jpg', caption="Online image", use_container_width=True)
 age = st.text_input("How old are you?")
 try:
     age = int(age)
