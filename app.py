@@ -317,34 +317,48 @@ if st.button("🚀 Confirm and Continue"):
     ### Add map
     df_map=pd.read_csv('peak_coord_1.csv')
     df_map=df.tail(3)
-    import plotly.graph_objects as go
-    #marker_sizes = [max(rate * 30, 8) for rate in df_map["success_rate"]]
-    fig = go.Figure(go.Scattermapbox(
-        lat=df_map["latitude"],
-        lon=df_map["longitude"],
-        mode='markers',
-        marker=go.scattermapbox.Marker(
-            size=[rate * 100000 for rate in df_map["success_rate"]],  # scale size
-            color=df_map["success_rate"],
-            colorscale="Viridis",
-            showscale=True,
-            sizemode='area'
-        ),
-        text=df_map["pkname"],  # hover text
-        hoverinfo='text+lat+lon'
-    ))
+    def success_rate_to_color(rate):
+        # Example: green (high success) to red (low success)
+        red = int(255 * (1 - rate))
+        green = int(255 * rate)
+        blue = 0
+        return [red, green, blue]
     
-    # Set layout (required!)
-    fig.update_layout(
-        mapbox=dict(
-            style="open-street-map",
-            zoom=4,
-            center=dict(lat=28, lon=85)
-        ),
-        margin={"r":0, "t":0, "l":0, "b":0},
-        height=600
+    # Add color column
+    df_map['color'] = df_map['success_rate'].apply(success_rate_to_color)
+    
+    # Map initial view centered roughly in the US
+    view_state = pdk.ViewState(
+        latitude=df['latitude'].mean(),
+        longitude=df['longitude'].mean(),
+        zoom=3,
+        pitch=0,
     )
     
+    # ScatterplotLayer for bubbles
+    scatter_layer = pdk.Layer(
+        "ScatterplotLayer",
+        data=df_map,
+        get_position='[longitude, latitude]',
+        get_fill_color='color',
+        get_radius='success_rate * 50000',  # scale radius, adjust multiplier for visibility
+        pickable=True,
+        auto_highlight=True,
+    )
+    
+    # Tooltip to show place name and success rate
+    tooltip = {
+        "html": "<b>{pkname}</b><br/>Success Rate: {success_rate}",
+        "style": {"color": "white"}
+    }
+    
+    # Render map with Streamlit and Pydeck
+    st.pydeck_chart(pdk.Deck(
+        map_style='mapbox://styles/mapbox/light-v9',
+        initial_view_state=view_state,
+        layers=[scatter_layer],
+        tooltip=tooltip,
+    ))
     # Display in Streamlit
-    st.plotly_chart(fig)
+    #st.plotly_chart(fig)
     #st.write(country_max_height)
