@@ -346,5 +346,5 @@ if st.button("🚀 Confirm and Continue"):
     )
     
     # Display in Streamlit
-    #st.plotly_chart(fig)
+    st.plotly_chart(fig)
     #st.write(country_max_height)
