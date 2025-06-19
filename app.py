@@ -315,7 +315,7 @@ if st.button("🚀 Confirm and Continue"):
     })
     
     ### Add map
-    df=pd.read_csv('/content/peak_coord_1_.csv')
+    df=pd.read_csv('peak_coord_1_.csv')
     #df.columns
     df_map=df.tail(3)
 
