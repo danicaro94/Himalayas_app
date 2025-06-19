@@ -320,7 +320,7 @@ if st.button("🚀 Confirm and Continue"):
     df_map=df.tail(3)
       
     import plotly.express as px
-    fig=px.scatter_map(df_map,lat='latitude', lon= 'longitude',size='success_rate',color='success_rate',hover_data='pkname')
+    fig=px.scatter_map(df_map,lat='latitude', lon= 'longitude',size='success_rate',color='success_rate',hover_data='pkname',color_continuous_scale='RdYlGn',)
     fig.update_layout(map_style="open-street-map")
     fig.show()    
     st.plotly_chart(fig)
