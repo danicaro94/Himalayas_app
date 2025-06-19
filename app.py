@@ -251,22 +251,24 @@ if st.button("🚀 Confirm and Continue"):
     })
     
     # Here we need to run model 1 to get max_height
+    df=pd.read_csv('peak_coord_1_.csv')
+    #df.columns
+    df_map=df.tail(3)
     
+    label_1 = df_map.iloc[0][ 'death_rate']
+    main_1 = df_map.iloc[0][ 'pkname']
+    note_1 = "df_map.iloc[0][ 'success_prob']"
+    note_1_1 = df_map.iloc[0][ 'heightm']
     
-    label_1 = "death_peak_1"
-    main_1 = "name_peak_1"
-    note_1 = "success_peak_1"
-    note_1_1 = "height_peak_1"
+    label_2 = df_map.iloc[1][ 'death_rate']
+    main_2 = df_map.iloc[1][ 'pkname']
+    note_2 = "df_map.iloc[1][ 'success_prob']"
+    note_2_1 =  df_map.iloc[1][ 'heightm']
     
-    label_2 = "death_peak_2"
-    main_2 = "name_peak_2"
-    note_2 = "success_peak_2"
-    note_2_1 = "height_peak_2"
-    
-    label_3 = "death_peak_3"
-    main_3 = "name_peak_3"
-    note_3 = "success_peak_3"
-    note_3_1 = "height_peak_3"
+    label_3 = df_map.iloc[2][ 'death_rate']
+    main_3 = df_map.iloc[2][ 'pkname']
+    note_3 = "df_map.iloc[2][ 'success_prob']"
+    note_3_1 = df_map.iloc[2][ 'heightm']
     
     # Display in columns
     col1, col2, col3 = st.columns(3)
