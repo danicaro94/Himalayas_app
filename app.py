@@ -245,8 +245,8 @@ if st.button("🚀 Confirm and Continue"):
     # Only run this after the button is clicked
     st.success("Thanks! Processing your inputs...")
 
-    st.markdown("<h3 style='color: white; font-family: Georgia;'>According to our model, you can tackle peaks of up to {country_max_height}.</h3>", unsafe_allow_html=True)
-    st.markdown("<h3 style='color: white; font-family: Georgia;'>Taking your difficulty preferences into account, we can suggest you take a look at the following peaks. We have modelled your personalised probability of success for each of them!🎉</h3>", unsafe_allow_html=True)
+    st.markdown("<h4 style='color: white; '>According to our model, you can tackle peaks of up to {country_max_height}.</h3>", unsafe_allow_html=True)
+    st.markdown("<h4 style='color: white; '>Taking your difficulty preferences into account, we can suggest you take a look at the following peaks. We have modelled your personalised probability of success for each of them!🎉</h3>", unsafe_allow_html=True)
     # Definition of new data for model 1 
     
     new_data = pd.DataFrame({
@@ -266,8 +266,8 @@ if st.button("🚀 Confirm and Continue"):
 
     label_i = "Death rate"
     main_i = "Peak name"
-    note_i = "Height"
-    note_i_1 = "Success probability"
+    note_i = "Success probability"
+    note_i_1 = "Height"
     
     label_1 = df_map.iloc[0][ 'death_rate']
     main_1 = df_map.iloc[0][ 'pkname']
@@ -292,8 +292,8 @@ if st.button("🚀 Confirm and Continue"):
         <div style='text-align: center; line-height: 1.2;'>
             <div style='color: red;'>{label_i}</div>
             <div style='color: white; font-size: 28px; font-weight: bold;'>{main_i}</div>
-            <div style='color: white;'>{note_i_1}meters</div>
-            <div style='color: green; font-size: 22px;'>{note_i}</div>
+            <div style='color: white;'>{note_i_1} </div>
+            <div style='color: lime; font-size: 22px;'>{note_i}</div>
         </div>
     """, unsafe_allow_html=True)
     
@@ -303,8 +303,8 @@ if st.button("🚀 Confirm and Continue"):
         <div style='text-align: center; line-height: 1.2;'>
             <div style='color: red;'>{label_1}</div>
             <div style='color: white; font-size: 28px; font-weight: bold;'>{main_1}</div>
-            <div style='color: white;'>{note_1_1}meters</div>
-            <div style='color: green; font-size: 22px;'>{note_1}</div>
+            <div style='color: white;'>{note_1_1} meters</div>
+            <div style='color: lime; font-size: 22px;'>{note_1}</div>
         </div>
     """, unsafe_allow_html=True)
     
@@ -313,8 +313,8 @@ if st.button("🚀 Confirm and Continue"):
         <div style='text-align: center; line-height: 1.2;'>
             <div style='color: red;'>{label_2}</div>
             <div style='color: white; font-size: 28px; font-weight: bold;'>{main_2}</div>
-            <div style='color: white;'>{note_2_1}meters</div>
-            <div style='color: green; font-size: 22px;'>{note_2}</div>
+            <div style='color: white;'>{note_2_1} meters</div>
+            <div style='color: lime; font-size: 22px;'>{note_2}</div>
         </div>
     """, unsafe_allow_html=True)
     
@@ -323,8 +323,8 @@ if st.button("🚀 Confirm and Continue"):
         <div style='text-align: center; line-height: 1.2;'>
             <div style='color: red;'>{label_3}</div>
             <div style='color: white; font-size: 28px; font-weight: bold;'>{main_3}</div>
-            <div style='color: white;'>{note_3_1}meters</div>
-            <div style='color: green; font-size: 22px;'>{note_3}</div>
+            <div style='color: white;'>{note_3_1} meters</div>
+            <div style='color: lime; font-size: 22px;'>{note_3}</div>
         </div>
     """, unsafe_allow_html=True)
     
