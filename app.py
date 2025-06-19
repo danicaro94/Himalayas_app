@@ -318,10 +318,12 @@ if st.button("🚀 Confirm and Continue"):
     df=pd.read_csv('peak_coord_1_.csv')
     #df.columns
     df_map=df.tail(3)
+    mean_lat = df_map['latitude'].mean()
+    mean_lon = df_map['longitude'].mean()
       
     import plotly.express as px
     fig=px.scatter_map(df_map,lat='latitude', lon= 'longitude',size='success_rate',color='success_rate',hover_data='pkname',color_continuous_scale='RdYlGn',)
-    fig.update_layout(map_style="open-street-map")
+    fig.update_layout(map_style="open-street-map", mapbox_center={"lat": mean_lat, "lon": mean_lon})
     fig.show()    
     st.plotly_chart(fig)
 
