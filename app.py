@@ -316,7 +316,7 @@ if st.button("🚀 Confirm and Continue"):
     ### Add map
 
     df_map=pd.read_csv('peak_coord_1.csv')
-    df_map=df.sample(n=3)
+    df_map=df.tail(3)
     fig=px.scatter_mapbox(df_map,lat='latitude', lon= 'longitude',size='success_rate',color='success_rate',hover_data='pkname')
     fig.update_layout(mapbox_style="open-street-map")
     st.plotly_chart(fig)
