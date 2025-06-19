@@ -315,7 +315,7 @@ if st.button("🚀 Confirm and Continue"):
     })
     
     ### Add map
-    df_map=pd.read_csv('peak_coord_1.csv')
+    df_map=pd.read_csv('peak_coord_1_.csv')
     df_map=df.tail(3)
     import plotly.graph_objects as go
     
