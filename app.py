@@ -245,7 +245,8 @@ if st.button("🚀 Confirm and Continue"):
     # Only run this after the button is clicked
     st.success("Thanks! Processing your inputs...")
 
-
+    st.markdown("<h3 style='color: white; font-family: Georgia;'>According to our model, you can tackle peaks of up to {country_max_height}.</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color: white; font-family: Georgia;'>Taking your difficulty preferences into account, we can suggest you take a look at the following peaks. We have modelled your personalised probability of success for each of them!🎉</h3>", unsafe_allow_html=True)
     # Definition of new data for model 1 
     
     new_data = pd.DataFrame({
@@ -262,6 +263,11 @@ if st.button("🚀 Confirm and Continue"):
     df=pd.read_csv('peak_coord_1_.csv')
     #df.columns
     df_map=df.tail(3)
+
+    label_i = "Death rate"
+    main_i = "Peak name"
+    note_i = "Height"
+    note_i_1 = "Success probability"
     
     label_1 = df_map.iloc[0][ 'death_rate']
     main_1 = df_map.iloc[0][ 'pkname']
@@ -279,7 +285,7 @@ if st.button("🚀 Confirm and Continue"):
     note_3_1 = df_map.iloc[2][ 'heightm']
     
     # Display in columns
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3 , col4 = st.columns(4)
     
     # First column
     col1.markdown(f"""
