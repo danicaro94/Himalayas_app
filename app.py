@@ -318,42 +318,10 @@ if st.button("🚀 Confirm and Continue"):
     df=pd.read_csv('peak_coord_1_.csv')
     #df.columns
     df_map=df.tail(3)
-
-    import plotly.graph_objects as go
-    marker_sizes = [rate * 5000 + 10 for rate in df_map["success_rate"]]
-    fig = go.Figure(go.Scattermapbox(
-        lat=df_map["latitude"],
-        lon=df_map["longitude"],
-        mode='markers',
-        marker=go.scattermapbox.Marker(
-            #size=[rate * 100000 for rate in df_map["success_rate"]],  # scale size
-            size=marker_sizes,
-            color=df_map["success_rate"],
-            colorscale="Viridis",
-            showscale=True,
-            sizemode='area'
-        ),
-        text=df_map["pkname"],  # hover text
-        hoverinfo='text+lat+lon'
-    ))
-    
-    # Set layout (required!)
-    fig.update_layout(
-        mapbox=dict(
-            style="open-street-map",
-            zoom=4,
-            center=dict(lat=28, lon=85)
-        ),
-        margin={"r":0, "t":0, "l":0, "b":0},
-        height=600
-    )
-    
-    # Display in Streamlit
-    st.plotly_chart(fig)
-    fig.show()
-    
+      
     import plotly.express as px
     fig=px.scatter_map(df_map,lat='latitude', lon= 'longitude',size='success_rate',color='success_rate',hover_data='pkname')
+    fig.update_layout(map_style="open-street-map")
     fig.show()    
     st.plotly_chart(fig)
-    st.plotly_chart(fig)
+
