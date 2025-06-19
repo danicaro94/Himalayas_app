@@ -315,7 +315,7 @@ if st.button("🚀 Confirm and Continue"):
     })
     
     ### Add map
-    df_map = pd.read_csv("your_file.csv", sep="\t")
+    df_map = pd.read_csv("peak_coord_1.csv'", sep="\t")
     df_map.columns = df_map.columns.str.strip()  # Clean column names
     
     # Optional: check column names
