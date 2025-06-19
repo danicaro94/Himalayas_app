@@ -351,5 +351,9 @@ if st.button("🚀 Confirm and Continue"):
     # Display in Streamlit
     st.plotly_chart(fig)
     fig.show()
-        
-
+    
+    import plotly.express as px
+    fig=px.scatter_map(df_map,lat='latitude', lon= 'longitude',size='success_rate',color='success_rate',hover_data='pkname')
+    fig.show()    
+    st.plotly_chart(fig)
+    st.plotly_chart(fig)
