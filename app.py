@@ -315,40 +315,41 @@ if st.button("🚀 Confirm and Continue"):
     })
     
     ### Add map
-    df_map = pd.read_csv("peak_coord_1_.csv'", sep="\t")
-    df_map.columns = df_map.columns.str.strip()  # Clean column names
-    
-    # Optional: check column names
-    # st.write(df_map.columns.tolist())
-    
+    df=pd.read_csv('/content/peak_coord_1_.csv')
+    #df.columns
+    df_map=df.tail(3)
+
+    import plotly.graph_objects as go
     marker_sizes = [rate * 5000 + 10 for rate in df_map["success_rate"]]
-    
     fig = go.Figure(go.Scattermapbox(
         lat=df_map["latitude"],
         lon=df_map["longitude"],
         mode='markers',
         marker=go.scattermapbox.Marker(
+            #size=[rate * 100000 for rate in df_map["success_rate"]],  # scale size
             size=marker_sizes,
             color=df_map["success_rate"],
             colorscale="Viridis",
             showscale=True,
             sizemode='area'
         ),
-        text=df_map["pkname"],
+        text=df_map["pkname"],  # hover text
         hoverinfo='text+lat+lon'
     ))
     
+    # Set layout (required!)
     fig.update_layout(
         mapbox=dict(
             style="open-street-map",
             zoom=4,
             center=dict(lat=28, lon=85)
         ),
-        margin={"r": 0, "t": 0, "l": 0, "b": 0},
+        margin={"r":0, "t":0, "l":0, "b":0},
         height=600
     )
     
-    st.plotly_chart(fig, use_container_width=True)
     # Display in Streamlit
-    #st.plotly_chart(fig)
-    #st.write(country_max_height)
+    st.plotly_chart(fig)
+    fig.show()
+        
+
