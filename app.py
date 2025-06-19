@@ -315,7 +315,8 @@ if st.button("🚀 Confirm and Continue"):
     })
     
     ### Add map
-
+    df_map=pd.read_csv('peak_coord_1.csv')
+    df_map=df.tail(3)
     import plotly.graph_objects as go
     #marker_sizes = [max(rate * 30, 8) for rate in df_map["success_rate"]]
     fig = go.Figure(go.Scattermapbox(
