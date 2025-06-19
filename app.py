@@ -315,9 +315,11 @@ if st.button("🚀 Confirm and Continue"):
     })
     
     ### Add map
-    df_map=pd.read_csv('peak_coord_1_.csv')
-    df_map=df.tail(3)
-    import plotly.graph_objects as go
+    df_map = pd.read_csv("your_file.csv", sep="\t")
+    df_map.columns = df_map.columns.str.strip()  # Clean column names
+    
+    # Optional: check column names
+    # st.write(df_map.columns.tolist())
     
     marker_sizes = [rate * 5000 + 10 for rate in df_map["success_rate"]]
     
@@ -342,11 +344,10 @@ if st.button("🚀 Confirm and Continue"):
             zoom=4,
             center=dict(lat=28, lon=85)
         ),
-        margin={"r":0, "t":0, "l":0, "b":0},
+        margin={"r": 0, "t": 0, "l": 0, "b": 0},
         height=600
     )
     
-    # Display the figure in Streamlit
     st.plotly_chart(fig, use_container_width=True)
     # Display in Streamlit
     #st.plotly_chart(fig)
